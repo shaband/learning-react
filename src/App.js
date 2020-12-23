@@ -1,7 +1,8 @@
 import {Component} from 'react'
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Table from "./Table";
+import Form from "./ Form";
 
 
 class App extends Component{
@@ -48,9 +49,10 @@ class App extends Component{
         }),
       })
     }
-    return  (
+    return (
       <div className="App">
-        <Table usersData={users}  removeUser={removeUser}/>
+        <Table usersData={users} removeUser={removeUser} />
+        <Form />
       </div>
     );
   }
