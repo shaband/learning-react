@@ -50,7 +50,7 @@ class App extends Component{
       })
     }
     return (
-      <div className="App">
+      <div className="App m-4">
         <Table usersData={users} removeUser={removeUser} />
         <Form />
       </div>
