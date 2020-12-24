@@ -5,8 +5,8 @@ import Table from "./Table";
 import Form from "./ Form";
 
 
-class App extends Component{
-  state={
+class App extends Component {
+  state = {
     users: [
       {
         name: "sameh",
@@ -37,22 +37,36 @@ class App extends Component{
         role: "Admin",
       },
     ],
-  }
-  render(){
-    const {users}=this.state
+  };
+
+  handleSubmit = (user) => {
+    this.setState({ users: [...this.state.users,user] });
+  };
+  render() {
+    const { users } = this.state;
     const removeUser = (index) => {
-      const {users} = this.state
-    
+      const { users } = this.state;
+
       this.setState({
         users: users.filter((user, i) => {
-          return i !== index
+          return i !== index;
         }),
-      })
-    }
+      });
+    };
     return (
       <div className="App m-4">
-        <Table usersData={users} removeUser={removeUser} />
-        <Form />
+        <Table
+         
+         
+          usersData={users}
+        
+        
+            removeUser={removeUser}
+               
+    
+        />
+        <Form              handleSubmit={this.handleSubmit}
+/>
       </div>
     );
   }
